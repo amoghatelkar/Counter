@@ -21,6 +21,12 @@ export default function App() {
     setPaused(false);
   };
 
+  const onReset = () => {
+    clearInterval(intervalId);
+    setPaused(false);
+    setCounter(0);
+  };
+
   return (
     <div className="App">
       <h1>{counter}</h1>
@@ -34,7 +40,7 @@ export default function App() {
             {"Pause"}
           </button>
         )}
-        <button className={"button"} onClick={() => setCounter(0)}>
+        <button className={"button"} onClick={() => onReset()}>
           {"Reset"}
         </button>
       </div>
